@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +17,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/login', [AuthController::class, 'login'])->name('auth.login');
+Route::post('/login', [AuthController::class, 'proses_login'])->name('proses.login');
 Route::get('/register', [AuthController::class, 'register'])->name('auth.register');
+Route::post('/register', [AuthController::class, 'proses_register'])->name('proses.register');
+
+Route::middleware('auth')->group(function () {
+    Route::get('logout', [AuthController::class, 'logout'])->name('logout');
+    Route::get('/', [HomeController::class, 'index'])->name('home');
+
+    Route::middleware('cek-role:admin')->group(function () {
+        Route::resource('admin/dashboard', DashboardController::class);
+    });
+});
