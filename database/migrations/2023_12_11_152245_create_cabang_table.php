@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('cabang', function (Blueprint $table) {
             $table->id();
             $table->string('nama_cabang');
+            $table->string('no_telp_cabang');
             $table->string('alamat_cabang');
-            $table->string('jumlah_barang');
             $table->timestamps();
         });
     }
