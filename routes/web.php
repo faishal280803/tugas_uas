@@ -48,3 +48,4 @@ Route::middleware('auth')->group(function () {
         Route::post('admin/transaksi/tolak/{id}', [TransaksiController::class, 'tolak'])->name('transaksi.tolak');
     });
 });
+
