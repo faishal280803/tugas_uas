@@ -27,6 +27,8 @@
                                 <th class="product-thumbnail">Foto Barang</th>
                                 <th class="product-name">Nama Barang</th>
                                 <th class="product-price">Harga</th>
+                                <th class="quantity-input">Quantity</th>
+                                <th class="quantity-input">Total Harga</th>
                                 <th class="product-quantity">Status</th>
                             </tr>
                         </thead>
@@ -41,6 +43,10 @@
                                     <h2 class="h5 text-black">{{$data->nama_barang}}</h2>
                                 </td>
                                 <td>Rp. {{number_format(($data->harga_jual), 0, ',', '.')}}</td>
+                                <td class="quantity_input">
+                                    <h2 class="h5 text-black">{{$data->quantity}}</h2>
+                                </td>
+                                <td>Rp. {{number_format(($data->total), 0, ',', '.')}}</td>
                                 <td>
                                     @if ($data->status == 0)
                                     <span class="badge rounded-pill bg-warning text-dark">Menunggu Persetujuan</span>
