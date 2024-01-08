@@ -9,7 +9,7 @@
                     <h1>Grosir FTH</h1>
                     <p class="mb-4">Grosir dengan harga yang sangat terjangkau dan pengiriman yang sangat aman dan juga
                         cepat.</p>
-                    <p><a href="" class="btn btn-secondary me-2">Beli Sekearang</a></p>
+                    <p><a href="" class="btn btn-secondary me-2">Beli Sekarang</a></p>
                 </div>
             </div>
             <div class="col-lg-7">

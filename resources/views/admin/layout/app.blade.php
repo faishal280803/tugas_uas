@@ -61,25 +61,25 @@
           </li>
           <li class="menu-item {{$is_active == 'supplier' ? 'active' : ''}}">
             <a href="{{route('supplier.index')}}" class="menu-link">
-              <i class="menu-icon tf-icons bx bx-home-circle"></i>
+              <i class="bx bx-package menu-icon"></i>
               <div data-i18n="Analytics">Supplier</div>
             </a>
           </li>
           <li class="menu-item {{$is_active == 'kategori' ? 'active' : ''}}">
             <a href="{{route('kategori.index')}}" class="menu-link">
-              <i class="menu-icon tf-icons bx bx-home-circle"></i>
+              <i class="bx bx-category-alt menu-icon"></i>
               <div data-i18n="Analytics">Kategori</div>
             </a>
           </li>
           <li class="menu-item {{$is_active == 'produk' ? 'active' : ''}}">
             <a href="{{route('produk.index')}}" class="menu-link">
-              <i class="menu-icon tf-icons bx bx-home-circle"></i>
+              <i class="bx bx-shopping-bag menu-icon"></i>
               <div data-i18n="Analytics">Produk</div>
             </a>
           </li>
           <li class="menu-item {{$is_active == 'pengguna' ? 'active' : ''}}">
             <a href="{{route('pengguna.index')}}" class="menu-link">
-              <i class="menu-icon tf-icons bx bx-home-circle"></i>
+              <i class="bx bx-user-plus menu-icon"></i>
               <div data-i18n="Analytics">Pengguna</div>
             </a>
           </li>
@@ -88,13 +88,13 @@
           </li>
           <li class="menu-item {{$is_active == 'masuk' ? 'active' : ''}}">
             <a href="{{route('transaksi.masuk')}}" class="menu-link">
-              <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                <i class="bx bx-cart-alt menu-icon"></i>
               <div data-i18n="Analytics">Transaksi Masuk</div>
             </a>
           </li>
           <li class="menu-item {{$is_active == 'selesai' ? 'active' : ''}}">
             <a href="{{route('transaksi.selesai')}}" class="menu-link">
-              <i class="menu-icon tf-icons bx bx-home-circle"></i>
+              <i class="bx bx-cart menu-icon"></i>
               <div data-i18n="Analytics">Transaksi Selesai</div>
             </a>
           </li>
