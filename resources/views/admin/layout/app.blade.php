@@ -94,7 +94,7 @@
           </li>
           <li class="menu-item {{$is_active == 'selesai' ? 'active' : ''}}">
             <a href="{{route('transaksi.selesai')}}" class="menu-link">
-              <i class="bx bx-cart menu-icon"></i>
+              <i class="bx bx-check-circle menu-icon"></i>
               <div data-i18n="Analytics">Transaksi Selesai</div>
             </a>
           </li>
