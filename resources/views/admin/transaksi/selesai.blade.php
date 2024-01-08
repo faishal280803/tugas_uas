@@ -14,6 +14,8 @@
                     <th>Nama Barang</th>
                     <th>Foto Barang</th>
                     <th>Harga</th>
+                    <th>Quantity</th>
+                    <th>Total Harga</th>
                     <th>Status</th>
                 </tr>
             </thead>
@@ -30,7 +32,9 @@
                         <img src="{{asset('assets/img/produk/'.$ts->foto_barang)}}" alt="{{$ts->nama_barang}}"
                             class="img-fluid" width="80">
                     </td>
-                    <td>{{$ts->harga_barang}}</td>
+                    <td>Rp. {{number_format(($ts->harga_barang), 0, ',', '.')}}</td>
+                    <td>{{$ts->quantity}}</td>
+                    <td>Rp. {{number_format(($ts->total), 0, ',', '.')}}</td>
                     <td>
                         @if ($ts->status == 0)
                         <span class="badge rounded-pill bg-warning text-dark">Menunggu Persetujuan</span>

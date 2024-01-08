@@ -22,7 +22,7 @@ class TransaksiController extends Controller
                 'users.nama_lengkap',
                 'produk.nama_barang',
                 'produk.foto_barang',
-                'produk.harga_beli as harga_barang',
+                'produk.harga_jual as harga_barang',
             )
             ->where('status', 0)->get();
         return view('admin.transaksi.masuk', $data);
@@ -39,7 +39,7 @@ class TransaksiController extends Controller
                 'users.nama_lengkap',
                 'produk.nama_barang',
                 'produk.foto_barang',
-                'produk.harga_beli as harga_barang',
+                'produk.harga_jual as harga_barang',
             )->get();
         return view('admin.transaksi.selesai', $data);
     }
@@ -52,7 +52,7 @@ class TransaksiController extends Controller
             'status' => 1,
         ]);
         $produk->update([
-            'stok' => $produk->stok - 1,
+            'stok' => $produk->stok - $order->quantity,
         ]);
 
         if ($order && $produk) {

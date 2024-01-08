@@ -3,24 +3,31 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use App\Models\Produk;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class OrderController extends Controller
 {
-    public function order($id)
+    public function order(Request $request, $id)
     {
-        $order = Order::create([
-            'id_produk' => $id,
-            'id_user' => auth()->id(),
-            'status' => 0
-        ]);
-
-
-        if ($order) {
-            return redirect('/')->with('message', 'Berhasil Memesan Barang!');
+        $produk = Produk::where('id', $id)->first();
+        if ($request->input('quantity') > $produk->stok) {
+            return redirect(url()->previous())->with('error', 'Stok Hanya ada ' . $produk->stok . '!');
         } else {
-            return redirect('/')->with('error', 'Gagal Memesan, Silahkan Coba lagi!');
+            $order = Order::create([
+                'id_produk' => $id,
+                'id_user' => auth()->id(),
+                'quantity' => $request->input('quantity'),
+                'total' => $produk->harga_jual * $request->input('quantity'),
+                'status' => 0
+            ]);
+
+            if ($order) {
+                return redirect(url()->previous())->with('message', 'Berhasil Memesan Barang!');
+            } else {
+                return redirect(url()->previous())->with('error', 'Gagal Memesan, Silahkan Coba lagi!');
+            }
         }
     }
 

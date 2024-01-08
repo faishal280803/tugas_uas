@@ -33,7 +33,7 @@ Route::get('/barang', [BarangController::class, 'index'])->name('barang');
 
 Route::middleware('auth')->group(function () {
     Route::get('logout', [AuthController::class, 'logout'])->name('logout');
-    Route::get('/order/{id}', [OrderController::class, 'order'])->name('order');
+    Route::post('/order/{id}', [OrderController::class, 'order'])->name('order');
     Route::get('/pesanan-saya', [OrderController::class, 'myOrder'])->name('my-order');
 
     Route::middleware('cek-role:admin')->group(function () {
@@ -48,3 +48,4 @@ Route::middleware('auth')->group(function () {
         Route::post('admin/transaksi/tolak/{id}', [TransaksiController::class, 'tolak'])->name('transaksi.tolak');
     });
 });
+

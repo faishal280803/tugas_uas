@@ -40,7 +40,7 @@
                                 <td class="product-name">
                                     <h2 class="h5 text-black">{{$data->nama_barang}}</h2>
                                 </td>
-                                <td>Rp. {{number_format(($data->harga_beli), 0, ',', '.')}}</td>
+                                <td>Rp. {{number_format(($data->harga_jual), 0, ',', '.')}}</td>
                                 <td>
                                     @if ($data->status == 0)
                                     <span class="badge rounded-pill bg-warning text-dark">Menunggu Persetujuan</span>
